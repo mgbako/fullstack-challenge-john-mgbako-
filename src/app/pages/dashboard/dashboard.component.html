@@ -1,1 +1,20 @@
-<h2>Dashboard</h2>
+<h2>Users</h2>
+
+<nz-table #basicTable [nzData]="users">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data.createdAt | date: 'yyy-MM-dd HH:mm:ss a'}}</td>
+      <td>{{data.email}}</td>
+      <td>
+        <a [routerLink]="['/users', data.email]" routerLinkActive="router-link-active">View</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

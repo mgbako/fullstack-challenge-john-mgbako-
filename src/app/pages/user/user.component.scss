@@ -1,0 +1,808 @@
+@import "../../../theme/mixin.scss";
+
+p {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.title {
+  @include gradient-text;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 8px;
+
+  text-align: center;
+}
+.subtitle {
+  padding: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.card {
+  background: #ffffff;
+
+  box-shadow: 0px 1px 4px rgba(109, 126, 255, 0.12),
+    0px 1px 24px rgba(67, 76, 91, 0.05);
+  border-radius: 30px;
+  padding: 22px;
+  margin-bottom: 20px;
+
+  &.twofa {
+    display: flex;
+    padding-bottom: 0;
+    margin-top: 50px;
+
+    .icon {
+      width: 100px;
+      height: 75px;
+    }
+
+    .title {
+      @include gradient-text;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .subtitle {
+      margin-bottom: 0;
+      font-size: 16px;
+      line-height: 22px;
+
+      a {
+        display: inline-block;
+        padding: 0;
+        font-weight: 600;
+        @include gradient-text;
+      }
+    }
+  }
+}
+
+.widget {
+  padding: 44px 30px;
+  //height: 213px;
+
+  .icon {
+    margin-right: 28px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0b0f28;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .volume p,
+  .user p {
+    font-size: 16px;
+    line-height: 19px;
+    color: #aeb4ca;
+    display: block;
+  }
+
+  .amount,
+  .count {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 31px;
+    @include gradient-text;
+  }
+
+  .content {
+  }
+
+  &.widget-right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .rate {
+      .title {
+        margin-bottom: 43px;
+        padding-left: 0;
+      }
+    }
+    .setup {
+      a {
+        display: block;
+        float: right;
+        margin-bottom: 43px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        padding-top: 0;
+        padding-bottom: 0;
+        @include gradient-text;
+      }
+    }
+
+    .ant-divider,
+    .ant-divider-vertical {
+      position: relative;
+      top: -0.06em;
+      display: inline-block;
+      width: 1px;
+      height: 72px;
+      margin: 0 37px 0 51px;
+      vertical-align: middle;
+    }
+  }
+
+  .content {
+    align-items: flex-start;
+    width: 100%;
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      color: #0b0f28;
+      background: unset;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: #0b0f28;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .commission {
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      color: #0b0f28;
+      background: unset;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: #0b0f28;
+      padding-top: 0;
+    }
+
+    .rate {
+      p {
+        font-size: 16px;
+        line-height: 19px;
+        color: #aeb4ca;
+        -webkit-text-fill-color: #aeb4ca;
+      }
+    }
+
+    .amount {
+      font-size: 50px;
+      line-height: 50px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.divider {
+  height: 75px;
+  border-right: 2px dashed #aeb4ca;
+  margin: 8% 37px 0 51px;
+}
+
+.kiosk {
+  padding: 34px 50px;
+  .title {
+    @include card-title;
+    text-align: left;
+  }
+
+  .name {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 38px;
+    span {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .kiosk-link {
+    input {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      font-size: 20px;
+      line-height: 24px;
+      /* identical to box height */
+
+      /* Dark Text */
+
+      color: #0b0f28;
+    }
+
+    .ant-input-search-button {
+      font-size: 18px;
+      line-height: 22px;
+      color: #aeb4ca;
+      height: 50px;
+      padding: 12px;
+      width: 100px;
+      background: #ffffff;
+      border: 1px solid #c3c9ee;
+
+      .icon {
+        height: 26px;
+        width: 26px;
+      }
+    }
+
+    .share {
+      padding-left: 113px;
+      display: block;
+      p {
+        margin-bottom: 20px;
+      }
+
+      a {
+        display: inline-flex;
+        font-size: 26px;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 26px;
+
+        &.ri {
+        }
+      }
+    }
+  }
+  .embed-download {
+    margin-top: 38px;
+
+    .embed-btn,
+    .embed-btn:focus,
+    .embed-btn:active {
+      padding: 16px 33px;
+      background: transparent;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      display: flex;
+      align-items: center;
+      color: #222f78;
+      span {
+        color: #222f78;
+      }
+    }
+
+    ::ng-deep .download {
+      .btn-group {
+        display: flex;
+        margin-top: 0;
+      }
+      .embed-btn {
+        padding: 14px 23px;
+        margin-right: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      .icon {
+        width: 97px;
+
+        &.download-icon {
+          margin: 0 10px 0 30px;
+          width: 23px;
+        }
+      }
+    }
+  }
+}
+
+.stats {
+  padding: 27px;
+  height: auto;
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 56px;
+
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      -webkit-text-fill-color: #0b0f28;
+      color: #0b0f28;
+      margin-bottom: 0;
+    }
+
+    ::ng-deep.period {
+      width: 115px;
+      height: 37px;
+
+      .ant-select-selection {
+        background: #ffffff;
+        border: 1px solid #c3c9ee;
+        box-sizing: border-box;
+        border-radius: 7.31967px !important;
+        height: 37px;
+
+        .ant-select-selection-selected-value {
+          color: #434c5b;
+          line-height: 37px;
+          font-weight: normal;
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .earnings,
+    .users,
+    .successTransactionCount,
+    .failedTransactionCount {
+      p {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 120%;
+        color: #aeb4ca;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 55px;
+
+    .successTransactionCount {
+      span {
+        -webkit-text-fill-color: #0b0f28;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+    .failedTransactionCount {
+      span {
+        -webkit-text-fill-color: #e80000;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+
+    .divider {
+      height: 75px;
+      border-right: 2px solid #aeb4ca;
+      margin: 0% 37px 0 51px;
+    }
+  }
+}
+
+::ng-deep.setupModal {
+  .ant-modal {
+    width: 772px !important;
+
+    .title {
+      @include gradient-text;
+      font-weight: 600;
+      font-size: 30px;
+
+      text-align: center;
+    }
+    .subtitle {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 30px;
+
+      &.success {
+        background: -webkit-linear-gradient(#5bcc7a, #34a853);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #34a853;
+      }
+    }
+  }
+
+  .setup-container {
+    text-align: center;
+    .logo {
+      margin: auto;
+      margin-bottom: 20px;
+
+      img {
+        width: 172px;
+      }
+    }
+
+    .img-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      color: #0b0f28;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+::ng-deep.rateModal {
+  border-radius: 30px;
+  .ant-modal {
+    width: 772px !important;
+    border-radius: 30px;
+  }
+
+  .ant-modal-header {
+    padding: 16px 24px;
+    color: rgba(0, 0, 0, 0.65);
+    background: #fff;
+    border-bottom: unset;
+    border-radius: 30px;
+
+    .title {
+      margin-bottom: 23px;
+      font-weight: 600;
+      text-align: left;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      color: #4f4f4f;
+      text-align: left;
+      font-size: 18px;
+
+      span {
+        background: -webkit-linear-gradient(
+          140.5deg,
+          #3142a8 0%,
+          #171f51 98.34%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .ant-modal-title {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    word-wrap: break-word;
+    text-align: left;
+  }
+  .ant-modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    pointer-events: auto;
+    border-radius: 30px;
+
+    padding: 88px 146px;
+  }
+
+  .ant-modal-footer {
+    padding: 10px 16px;
+    text-align: right;
+    background: transparent;
+    border-top: unset;
+    border-radius: 0 0 4px 4px;
+    display: none;
+  }
+
+  .rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    .btn {
+      width: 83px;
+      height: 60px;
+      background: #c3c9ee;
+      border: 1px solid #c3c9ee;
+      box-sizing: border-box;
+      border-radius: 10px 0px 0px 10px;
+      font-size: 30px;
+      line-height: 30px;
+
+      &.btn-right {
+        border-radius: 0px 10px 10px 0px;
+        height: 60px;
+      }
+    }
+
+    .input {
+      border: 1px solid #c3c9ee;
+      font-size: 30px;
+      height: 60px;
+      width: 100%;
+      text-align: center;
+      line-height: 60px;
+    }
+  }
+
+  .btn-group {
+    margin-top: 3rem;
+
+    .login-form-button {
+      //width: 100% !important;
+    }
+  }
+}
+
+::ng-deep .commissionModal {
+  .ant-modal {
+    width: 772px !important;
+    border-radius: 30px;
+
+    .ant-modal-content {
+      // padding: 52px;
+      padding: 88px 146px;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 30px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .subtitle {
+      font-size: 18px;
+      text-align: left;
+    }
+
+    div#otp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    input {
+      background: #ffffff;
+      border: 1px solid #c3c9ee;
+      box-sizing: border-box;
+      border-radius: 10px !important;
+      height: 50px;
+      margin-right: 10px;
+      text-align: center;
+    }
+
+    .btn-group {
+      margin-top: 80px;
+    }
+
+    img {
+      margin: auto;
+      text-align: center;
+      display: block;
+    }
+  }
+}
+
+.note {
+  background: #edeef3;
+  border-radius: 10px;
+  padding: 21px 10px;
+  font-size: 16px;
+  line-height: 19px;
+  p:nth-child(2) {
+    margin-bottom: 0;
+  }
+}
+
+.jscode {
+  background: rgb(0 0 0 / 5%);
+  color: #000;
+  font-size: 15px;
+  overflow: auto;
+  padding: 10px 0 10px 5px;
+  margin: 0;
+  border: 0;
+  word-wrap: initial;
+}
+
+::ng-deep.embedCodeModal {
+  .ant-modal {
+    width: 700px !important;
+  }
+  .ant-modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    pointer-events: auto;
+    border-radius: 30px;
+    padding: 50px 50px;
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .widget-top {
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      width: 100%;
+    }
+
+    .right {
+    }
+  }
+
+  nz-content {
+    margin: 24px;
+    min-height: auto;
+    margin-top: 48px;
+    margin-left: 0;
+  }
+
+  .kiosk {
+    .kiosk-link {
+      & > div > div {
+        width: 100%;
+      }
+
+      .share {
+        padding-left: 0;
+        display: block;
+        margin-top: 26px;
+      }
+    }
+
+    .embed-download {
+      & > div > div {
+        width: 50%;
+      }
+    }
+  }
+
+  .kiosk-analytics {
+    & > div {
+      width: 100%;
+    }
+  }
+
+  .setup {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .widget .divider {
+    display: none;
+  }
+
+  ::ng-deep {
+    .rateModal .ant-modal-content {
+      padding: 88px 88px;
+    }
+    .commissionModal .ant-modal .ant-modal-content {
+      padding: 88px 88px;
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  ::ng-deep.rateModal .ant-modal-content {
+    padding: 88px 88px;
+  }
+}
+@media (max-width: 575.98px) {
+  .card {
+    padding: 24px 16px;
+  }
+  .widget.widget-right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 24px 16px 16px;
+
+    .icon {
+      margin-right: 28px;
+      display: none;
+    }
+
+    .content {
+      width: 100%;
+      flex-direction: column;
+
+      .setup {
+        a {
+          margin-bottom: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .card.twofa {
+    .icon {
+      display: none;
+    }
+    .subtitle {
+      text-align: left;
+    }
+  }
+
+  .kiosk .embed-download > div > div {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .kiosk .kiosk-link .share .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+  }
+
+  .kiosk .embed-download .embed-btn,
+  .kiosk .embed-download .embed-btn:focus,
+  .kiosk .embed-download .embed-btn:active {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .stats .bottom .divider {
+    height: 75px;
+    border-right: 2px solid #aeb4ca;
+    margin: 0% 24px 0 16px;
+  }
+
+  .setupModal .setup-container .logo {
+    margin: 10px 24px;
+    margin-bottom: 20px;
+    width: auto;
+  }
+  .setupModal .setup-container .img-title {
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  ::ng-deep.rateModal .ant-modal-content {
+    padding: 24px 0px;
+  }
+
+  ::ng-deep {
+    .commissionModal .ant-modal .ant-modal-content {
+      padding: 24px 0px;
+    }
+
+    .embedCodeModal .ant-modal-content {
+      padding: 24px 0;
+    }
+  }
+}

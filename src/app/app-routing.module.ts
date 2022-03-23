@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: 'users/:email',
+    loadChildren: () =>
+      import('./pages/user/user.module').then((m) => m.UserModule),
+  },
   /* {
     path: 'dashboard',
     loadChildren: () =>

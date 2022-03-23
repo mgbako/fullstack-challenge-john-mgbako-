@@ -10,7 +10,7 @@ const routes = {
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardService extends BaseService<any> {
+export class UserService extends BaseService<any> {
   constructor(public httpClient: HttpClient) {
     super(httpClient);
   }

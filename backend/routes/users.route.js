@@ -5,10 +5,43 @@ const User = require('../models/user.model');
 
 const router = express.Router();
 
+
+router.get('/', async (req, res, next) => {
+  const users = await User.findAll();
+  console.log(users);
+ 
+  
+  return res.status(200).json({
+    message: 'Users',
+    data: users,
+    status: true
+  });
+  
+})
+
+router.get('/:email', async (req, res, next) => {
+
+  const email = req.params.email;
+  console.log(email);
+  if (!email) {
+    return res.status(200).json({
+      message: 'User not found',
+      data: users,
+      status: true
+    });
+  }
+  const user = await User.findOne({email: email});
+ 
+  
+  return res.status(200).json({
+    message: 'User',
+    data: user,
+    status: true
+  });
+  
+})
+
 router.post('/signup', (req, res, next) => {
-  /* bcrypt.genSalt(12, (err, salt) => {
-    console.log("Salt", salt)
-  }) */
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     const user = {
       email: req.body.email,
@@ -55,5 +88,6 @@ router.post('/login', async (req, res, next) => {
       status: true
     })
 })
+
 
 module.exports = router;

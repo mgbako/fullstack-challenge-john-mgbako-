@@ -6,9 +6,9 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 
 import { SharedModule } from 'src/app/shared/shared.module';
 
-import { DashboardRoutingModule } from './dashboard-routing.module';
+import { UserRoutingModule } from './user-routing.module';
 
-import { DashboardComponent } from './dashboard.component';
+import { UserComponent } from './user.component';
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { DashboardComponent } from './dashboard.component';
     RouterModule,
     SharedModule,
     NzTableModule,
-    DashboardRoutingModule,
+    UserRoutingModule,
   ],
-  declarations: [DashboardComponent],
+  declarations: [UserComponent],
 })
-export class DashboardModule {}
+export class UserModule {}
