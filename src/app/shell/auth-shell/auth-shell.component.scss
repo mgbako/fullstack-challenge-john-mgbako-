@@ -1,0 +1,445 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #f0f2f5;
+}
+
+nz-content {
+  margin: 24px 16px 0;
+  overflow: initial;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 380px;
+  width: 30%;
+}
+
+.ant-layout {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+.auth {
+  height: 100vh;
+  ::ng-deep.navbar {
+    display: block;
+    background: #ffffff;
+    box-shadow: 0px 2px 2px rgba(50, 50, 71, 0.06),
+      0px 2px 4px rgba(50, 50, 71, 0.06);
+    padding-top: 0rem;
+    transform: translateY(0px);
+  }
+
+  .auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .auth-right {
+      height: 100vh;
+      justify-content: center;
+      background: linear-gradient(140.5deg, #7165e3 -2.16%, #7165e3 96.18%);
+      padding-top: 33px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      width: 50%;
+      right: 0;
+      bottom: 0;
+
+      img {
+        width: 552px;
+        //height: 652px;
+      }
+
+      .kiosk-icon {
+        background-size: contain;
+        background-position: center;
+        width: 500px;
+        height: 400px;
+        margin: auto;
+        position: relative;
+        margin-top: 100px;
+        .bank {
+          width: 360px;
+          position: absolute;
+          top: 48px;
+          right: -80px;
+        }
+
+        .male,
+        .female {
+          width: 90px;
+          position: absolute;
+        }
+
+        .male {
+          top: -40px;
+          right: -40px;
+        }
+        .female {
+          bottom: -40px;
+          left: -40px;
+        }
+      }
+
+      .text-content {
+        margin: 0 185px;
+        text-align: center;
+
+        h2 {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 32px;
+          align-items: center;
+
+          color: #ffffff;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          color: #fbfbfe;
+        }
+      }
+    }
+
+    .auth-left {
+      background: #fbfbfe;
+      padding: 54px;
+      padding-left: 120px;
+      padding-right: 120px;
+      position: absolute;
+      width: 50%;
+      left: 0;
+      bottom: 0;
+      overflow-y: scroll;
+      height: 100%;
+
+      .brand {
+        width: 130px;
+        display: block;
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .btn-close {
+        position: absolute;
+        right: 1.5rem;
+        top: 20px;
+      }
+
+      ::ng-deep {
+        .title {
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 40px;
+          color: #000000;
+          margin-bottom: 20px;
+          margin-top: 54px;
+        }
+
+        .title_2 {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #333d47;
+        }
+
+        .subtitle {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #6c7884;
+          margin-bottom: 40px;
+        }
+      }
+
+      .other-link {
+        margin-top: 28px;
+      }
+
+      ::ng-deep.ant-input,
+      ::ng-deep.select-control {
+        background: #ffffff;
+        border: 1px solid #e5e5ea;
+        border-radius: 4px;
+        height: 48px;
+
+        .ant-select-selector {
+          border: none;
+          height: 100%;
+          padding: 9px 11px;
+        }
+      }
+
+      ::ng-deep {
+        .ant-select-selector,
+        .ant-picker {
+          background: #ffffff;
+          border: 1px solid #e5e5ea;
+          height: 100%;
+          padding: 9px 11px;
+        }
+      }
+
+      ::ng-deep.ant-form-item-label > label::after {
+        display: none;
+      }
+
+      ::ng-deep {
+        .showIcon {
+          position: relative;
+          .password-show {
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            background: #f2f2f7;
+            border-radius: 4px;
+            padding: 4px 16px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 16px;
+            text-align: center;
+            color: #333d47;
+            cursor: pointer;
+            z-index: 2;
+            &:hover {
+              color: #333d47;
+            }
+          }
+        }
+
+        .text-right {
+          margin-top: 24px;
+        }
+      }
+
+      ::ng-deep.login-form-button {
+        min-width: 150px;
+        height: 56px;
+        padding: 0 16px;
+        box-shadow: 0px 4px 23px rgba(113, 101, 227, 0.16);
+        border-radius: 8px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .auth {
+    .auth-container {
+      //grid-template-columns: 1fr 500px;
+      .auth-right {
+        .kiosk-icon {
+          width: 300px;
+          margin-top: 40px;
+
+          .bank {
+            width: 200px;
+            position: absolute;
+            top: 110px;
+            right: -80px;
+          }
+
+          .male {
+            top: 45px;
+            right: -25px;
+            width: 60px;
+          }
+          .female {
+            bottom: 45px;
+            left: -25px;
+            width: 60px;
+          }
+        }
+        .text-content {
+          margin: 0 108px;
+        }
+      }
+
+      .auth-left {
+        //width: 50%;
+        padding-left: 50px;
+        padding-right: 50px;
+        .title {
+          margin-top: 15rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .auth {
+    .navbar .navbar-nav .nav-item .nav-link {
+      color: #171f51 !important;
+    }
+
+    .auth-container {
+      .auth-left {
+        .title {
+          margin-top: 12rem;
+        }
+      }
+
+      .auth-left {
+        background: #f8f8f8;
+        padding: 54px;
+        padding-left: 8rem !important;
+        padding-right: 8rem !important;
+        width: 100%;
+        font-size: 18px;
+
+        ::ng-deep {
+          .error-container span {
+            display: block;
+            font-size: 18px;
+          }
+          .title {
+            font-size: 35px;
+          }
+
+          .subtitle {
+            font-size: 24px;
+          }
+          .ant-form {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: rgba(0, 0, 0, 0.65);
+            font-size: 18px;
+            font-variant: tabular-nums;
+            line-height: 1.5;
+            list-style: none;
+            font-feature-settings: "tnum";
+
+            label {
+              font-size: 18px;
+            }
+
+            .ant-col-md-12 {
+              display: block;
+              box-sizing: border-box;
+              width: 100%;
+            }
+          }
+
+          .ant-input {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-variant: tabular-nums;
+            list-style: none;
+            font-feature-settings: "tnum";
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            padding: 4px 35px;
+            color: rgba(0, 0, 0, 0.65);
+            font-size: 18px;
+            line-height: 1.5;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            transition: all 0.3s;
+          }
+          .ant-select-selection--single {
+            position: relative;
+            height: 50px;
+            cursor: pointer;
+          }
+
+          /*   .ant-btn {
+            line-height: 1.5;
+            position: relative;
+            display: inline-block;
+            font-weight: 400;
+            white-space: nowrap;
+            text-align: center;
+            background-image: none;
+            border: 1px solid transparent;
+            box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            touch-action: manipulation;
+            height: auto;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 4px;
+            color: rgba(0, 0, 0, 0.65);
+            background-color: #fff;
+            border-color: #d9d9d9;
+          } */
+        }
+        ::ng-deep.anticon {
+          font-size: 18px;
+        }
+      }
+
+      .auth-right {
+        width: 0%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .auth {
+    .auth-container {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .auth-right {
+        display: none;
+      }
+
+      .auth-left {
+        width: 100%;
+        padding: 32px !important;
+
+        .title {
+          font-size: 25px;
+          margin-top: 5rem;
+        }
+
+        ::ng-deep .ant-col-12 {
+          display: block;
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+
+  ::ng-deep .auth .auth-container .auth-left .title {
+    font-size: 28px !important;
+    background: -webkit-linear-gradient(#3142a8, #171f51);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

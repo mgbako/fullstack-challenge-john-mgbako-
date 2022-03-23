@@ -1,0 +1,59 @@
+::ng-deep .auth .auth-container .auth-left {
+  //padding-left: 50px !important;
+  //padding-right: 50px !important;
+}
+
+.phoneNumber {
+  input {
+    padding-left: 8rem;
+  }
+}
+
+.country_list {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  min-width: 90px !important;
+  width: auto !important;
+  z-index: 2;
+  background: #f2f2f7;
+  border-radius: 5px;
+
+  ::ng-deep .ant-select-selector {
+    position: relative;
+    background-color: #f2f2f7;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.password {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024.98px) {
+  ::ng-deep .auth {
+    .auth-container {
+      .auth-left {
+        //width: 50%;
+        padding-left: 90px;
+        padding-right: 90px;
+        .title {
+          margin-top: 15rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024.98px) {
+  ::ng-deep .auth {
+    .auth-container {
+      .auth-left {
+        .phoneNumber input {
+          padding-left: 8rem !important;
+        }
+      }
+    }
+  }
+}

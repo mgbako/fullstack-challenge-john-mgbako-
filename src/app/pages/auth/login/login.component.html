@@ -1,0 +1,54 @@
+<h2 class="title">Hi, Welcome Back!</h2>
+<p class="subtitle">Enter your details to Login</p>
+
+<form nz-form nzLayout="vertical" [formGroup]="authForm" class="login-form" (ngSubmit)="onSubmit()" id="login">
+  <nz-form-item>
+    <nz-form-label nzFor="email">Email</nz-form-label>
+    <nz-form-control>
+      <nz-input-group>
+        <input type="email" nz-input formControlName="email" placeholder="name@example.com" />
+      </nz-input-group>
+    </nz-form-control>
+    <app-input-error name='Email' [control]="authForm.get('email')"></app-input-error>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="password">Password</nz-form-label>
+    <nz-form-control class="showIcon">
+      <nz-input-group>
+        <input [type]="showPassword ? 'text' : 'password'" nz-input formControlName="password"
+          placeholder="Your Password" />
+      </nz-input-group>
+      <span class="password-show" (click)="onShowPassword()">{{ showPassword ? 'Hide' : 'show'}}</span>
+    </nz-form-control>
+    <app-input-error name='Password' [control]="authForm.get('password')"></app-input-error>
+  </nz-form-item>
+  <div nz-row class="login-form-margin btn-group">
+    <div nz-col [nzSpan]="24">
+      <label>
+        <span>Minimum of 8 characters, 1 uppercase, 1 lower case, 1 special character</span>
+      </label>
+    </div>
+    <div nz-col [nzSpan]="24" class="text-right">
+      <a class="login-form-forgot" routerLink="/auth/forgetpassword">Forgot password</a>
+    </div>
+  </div>
+  <div nz-col [nzSpan]="24" class="btn-group">
+
+    <button nz-button nzBlock class="login-form-button login-form-margin" [nzType]="'primary'"
+      [disabled]="authForm.invalid || formloader">
+      <ng-container *ngIf="formloader">
+        <i nz-icon [nzType]="'loading'"></i>
+        please wait
+      </ng-container>
+      <ng-container *ngIf="!formloader">
+        Log in
+      </ng-container>
+    </button>
+    <!--  <a routerLink="/login" class="link">Login</a> -->
+  </div>
+  <div nz-col [nzSpan]="24">
+    <p class="other-link text-center">
+      Are you a new user? <a routerLink="/onboarding" class="link">Register</a>
+    </p>
+  </div>
+</form>

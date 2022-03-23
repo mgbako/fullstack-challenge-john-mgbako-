@@ -1,0 +1,55 @@
+<nz-header>
+  <div class="app-header">
+    <a class="brand" [routerLink]="['/']" data-aos="fade-right">
+      <img [src]="logo" alt="logo">
+    </a>
+    <div class="ml-auto menu-right" [ngClass]="{'show': isCollapsed}">
+      <ul nz-menu nzMode="horizontal">
+        <li nz-menu-item data-aos="fade-in" data-aos-delay="50">
+          <a [routerLink]="['/','aboutus']" routerLinkActive="active">
+            About
+          </a>
+        </li>
+        <li nz-menu-item>
+          <a [routerLink]="['/','blog']" routerLinkActive="active">
+            Blog
+          </a>
+        </li>
+        <li nz-menu-item>
+          <a [routerLink]="['/','blog']" routerLinkActive="active">
+            Help
+          </a>
+        </li>
+        <ng-container *ngIf="!isLoggedIn">
+          <li nz-menu-item class="login-btn" data-aos="fade-in" data-aos-delay="150">
+            <a [routerLink]="['/', 'auth', 'login']">
+              Login
+            </a>
+          </li>
+          <li nz-menu-item class="create-btn" data-aos="fade-in" data-aos-delay="150">
+            <a [routerLink]="['/', 'auth', 'onboarding']">
+              Create Account
+            </a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+
+          <li nz-menu-item class="create-btn" data-aos="fade-in" data-aos-delay="150">
+            <a [routerLink]="['/', 'dashboard']">
+              Dashboard
+            </a>
+          </li>
+          <li nz-menu-item nz-typography nzType="danger">
+            <a nz-typography nzType="danger" (click)="logout()">
+              Logout
+            </a>
+          </li>
+        </ng-container>
+
+      </ul>
+    </div>
+    <button nz-button nzType="link" class="menu-icon" (click)="isCollapsed = !isCollapsed"><i nz-icon nzType="menu"
+        nzTheme="outline"></i></button>
+  </div>
+
+</nz-header>

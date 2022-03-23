@@ -1,0 +1,97 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="243px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+  <!--   <div class="sidebar-logo">
+      <a href="#">
+        <img src="assets/svgs/logo.svg" alt="logo" class="d-none">
+      </a>
+    </div> -->
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzMatchRouter [routerLink]="['/dashboard']">
+        <i nz-icon nzType="appstore" nzTheme="outline"></i>
+        <span>Dashboard</span>
+      </li>
+     
+      <li nz-menu-item nzMatchRouter [routerLink]="['/wallet']">
+        <i nz-icon nzType="wallet" nzTheme="outline"></i>
+        <span>Wallet</span>
+      </li>
+      <li nz-menu-item nzMatchRouter [routerLink]="['/settings', 'security']">
+        <i nz-icon nzType="setting" nzTheme="outline"></i>
+        <span>Settings</span>
+      </li>
+     
+      <li nz-submenu *ngIf="user" nzClose [nzTitle]="user?.fullName !== ' ' ? user?.fullName : 'Profile'" nzIcon="user" class="mobile">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['/profile']">{{ 'Profile' }}</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-menu-item (click)="logout()" class="mobile">
+        <i nz-icon nzType="logout" nzTheme="outline"></i>
+        <span>Logout</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-content>
+      <nz-header>
+        <div class="app-header">
+          <div class="sidebar-logo">
+            <a [routerLink]="['/']">
+              <img src="assets/svgs/logo.svg" alt="logo">
+            </a>
+          </div>
+         <!--  <div class="search-input">
+            <nz-input-group [nzPrefix]="suffixIconSearch">
+              <input type="text" nz-input placeholder="Search" />
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+              <img src="assets/svgs/search.svg" alt="" nz-icon class="nz-icon">
+            </ng-template>
+          </div> -->
+          <div class="ml-auto menu-right">
+            <ul nz-menu nzMode="horizontal" class="top-menu-mobile">
+              <li nz-menu-item >
+                <a [routerLink]="['/','settings', 'security']">
+                  <img src="assets/svgs/setting.svg" alt="settings">
+                </a>
+              </li>
+              <li nz-menu-item *ngIf="false">
+                <img src="assets/svgs/notification.svg" alt="notification">
+              </li>
+              <ng-template #NameIcon>
+                <div class="ant-menu-submenu-title">
+                  <span class="ng-tns-c3-1 ng-star-inserted">{{user?.fullName | titlecase }}</span>
+                  <span class="iconName">{{ getFirstLetter(user?.fullName) }}</span>
+                </div>
+              </ng-template>
+              <li nz-submenu [nzTitle]="NameIcon">
+                <ul>
+                  <li nz-menu-item >
+                    <a [routerLink]="['/','profile']">Profile</a>
+                  </li>
+                  <li nz-menu-item (click)="logout()">Logout</li>
+                </ul>
+              </li>
+              <li>
+                
+              </li>
+            </ul>
+            <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <img src="assets/svgs/menu.svg" alt="menu" nz-icon class="nz-icon">
+          </span>
+          </div>
+        </div>
+      </nz-header>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

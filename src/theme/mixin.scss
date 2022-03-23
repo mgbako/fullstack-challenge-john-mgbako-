@@ -1,0 +1,22 @@
+@import "./variables";
+
+@mixin gradient-text {
+  //color: linear-gradient(45deg, $primary-color, $secondary-color);
+  background: -webkit-linear-gradient($primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@mixin gradient-grey-text {
+  //color: linear-gradient(45deg, $primary-color, $text-color);
+  background: -webkit-linear-gradient($text-color, $text-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin card-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0b0f28;
+  margin-bottom: 32px;
+}

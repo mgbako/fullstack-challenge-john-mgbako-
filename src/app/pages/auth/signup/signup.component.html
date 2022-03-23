@@ -1,0 +1,74 @@
+<form nz-form nzLayout="vertical" [formGroup]="authForm" class="login-form" (ngSubmit)="onSubmit()" id="login">
+  <div class="step_1">
+    <h2 class="title">Let’s get you started!</h2>
+    <p class="subtitle">Enter your details to get started</p>
+
+    <div nz-row [nzGutter]="16">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzFor="email">Email</nz-form-label>
+          <nz-form-control>
+            <nz-input-group>
+              <input type="email" nz-input formControlName="email" placeholder="name@example.com" />
+            </nz-input-group>
+          </nz-form-control>
+          <app-input-error name='Email' [control]="authForm.get('email')"></app-input-error>
+        </nz-form-item>
+        <nz-form-item class="password">
+          <nz-form-label nzFor="password">Password</nz-form-label>
+          <nz-form-control class="showIcon">
+            <nz-input-group>
+              <input [type]="showPassword ? 'text' : 'password'" nz-input formControlName="password"
+                placeholder="Your Password" (keyup)="onValidate($event)" />
+            </nz-input-group>
+            <span class="password-show" (click)="onShowPassword()">{{ showPassword ? 'Hide' : 'show'}}</span>
+          </nz-form-control>
+          <app-input-error name='Password' [control]="authForm.get('password')"></app-input-error>
+        </nz-form-item>
+        <div nz-row class="login-form-margin btn-group" style="margin-bottom: 1rem;">
+          <div nz-col [nzSpan]="24">
+            <app-password-strength *ngIf="authForm.controls.password.value" [strength]="strength">
+            </app-password-strength>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div nz-row [nzGutter]="16">
+
+      <div nz-col [nzSpan]="24" class="terms">
+        <label nz-checkbox formControlName="terms">
+          <span>I have read and agreed to the <a [routerLink]="['/policies']" fragment="terms" class="link">Terms,
+              Conditions</a> and <a [routerLink]="['/policies']" fragment="others">KYC Policy</a> and confirm that I am
+            opening this account for my own personal
+            use,
+            and not for use by a third party.</span>
+        </label>
+      </div>
+    </div>
+
+    <div nz-col [nzSpan]="24" class="btn-group">
+
+      <div nz-col [nzSpan]="24" class="btn-group">
+
+        <button nz-button nzBlock class="login-form-button login-form-margin" [nzType]="'primary'"
+          [disabled]="authForm.invalid || formloader">
+
+          <ng-container *ngIf="formloader">
+            <i nz-icon [nzType]="'loading'"></i> &nbsp;
+            Please wait
+          </ng-container>
+          <ng-container *ngIf="!formloader">
+            Continue
+          </ng-container>
+        </button>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="24">
+      <p class="other-link text-center">
+        Do you have an account? <a routerLink="/login" class="link">Login</a>
+      </p>
+    </div>
+  </div>
+
+</form>
